@@ -14,3 +14,26 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+
+
+# Steps:
+
+- Header
+   -Logo
+
+- Login Form
+  - Make a toggle between signIn and singUp form
+  - Validation using Ragex
+  - connected firebase
+  - signUp authentication using firebase
+  - signIn authentication using firebase
+  - once user sign in or sign up --> add that user object to Redux store so we can use that data anywhere in our app
+       - created store
+       - created slice
+       - added slice reducer to store
+       - provide the store 
+       ((write in useEffect) look onAuthStateChange of firebase to automatically call when anything happen like sigin, signOut, login etc  in root comp. Body also do redirect to here using Navigate hook. } const navigate = useNavigate())
+          ----> in login comp : if signIn } navigate("/browse) ..... in signOut } navigate("/")
+
+
