@@ -35,5 +35,4 @@ If you are developing a production application, we recommend using TypeScript wi
        - provide the store 
        ((write in useEffect) look onAuthStateChange of firebase to automatically call when anything happen like sigin, signOut, login etc  in root comp. Body also do redirect to here using Navigate hook. } const navigate = useNavigate())
           ----> in login comp : if signIn } navigate("/browse) ..... in signOut } navigate("/")
-
-
+       - Sign Out button
