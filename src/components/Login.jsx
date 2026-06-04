@@ -8,10 +8,9 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const navigate = useNavigate();
+  
   const [isSignIn, setisSignIn] = useState(true);
   const [errorMessage, seterrorMessage] = useState("");
 
@@ -34,7 +33,7 @@ const Login = () => {
     );
     seterrorMessage(message);
 
-    console.log(email);
+    // console.log(email);
 
     if (message != null) return;
 
@@ -52,7 +51,6 @@ const Login = () => {
           });
         })
         .then(() => {
-          navigate("/browse");
         })
         .catch((error) => {
           seterrorMessage(error.code + " - " + error.message);
@@ -68,8 +66,7 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          console.log(user);
-          navigate("/browse");
+          // console.log(user);
         })
         .catch((error) => {
           const errorCode = error.code;

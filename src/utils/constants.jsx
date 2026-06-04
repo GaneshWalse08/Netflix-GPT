@@ -3,3 +3,11 @@ export const logoImg = "https://help.nflxext.com/helpcenter/OneTrust/oneTrust_pr
 export const signInBackgroundImg = "https://assets.nflxext.com/ffe/siteui/vlv3/435e8bb8-7f1b-49cb-8da8-bff997124294/web/IN-en-20260511-TRIFECTA-perspective_ec39852e-0b48-4e8a-b415-dd8376cd83ce_medium.jpg";
 
 export const userIcon = "https://wallpapers.com/images/hd/netflix-profile-pictures-1000-x-1000-qo9h82134t9nv0j0.jpg";
+
+export const API_Options = {
+  method: 'GET',
+  headers: {
+    accept: 'application/json',
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxZGFmY2ZmYTA5NjA1MDA5ZjczMTdjMzRlZmE1MTA3ZiIsIm5iZiI6MTc4MDU3MzA4NS43MzUwMDAxLCJzdWIiOiI2YTIxNjM5ZGJkMzBiYWY2Y2RlMjQyNGYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.W2DeCfyeVO4qiWwd7M5XuF0FJoFlcOmDSbuQTDy-Vso'
+  }
+};
