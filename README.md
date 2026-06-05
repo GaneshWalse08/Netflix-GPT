@@ -45,3 +45,4 @@ If you are developing a production application, we recommend using TypeScript wi
        - create VideoTitle
        - create VideoBackground
             - by cadding trailer video to store
+            custom hook
