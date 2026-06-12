@@ -12,7 +12,7 @@ const MainContainer = () => {
 
   const mainMovie = movies[0];
 
-  console.log("main Movie", mainMovie);
+  // console.log("main Movie", mainMovie);
 
   return(
     <div>
