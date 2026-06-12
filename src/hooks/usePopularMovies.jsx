@@ -11,6 +11,9 @@ const usePopularMovies = () => {
     
     const data = await fetch("https://api.themoviedb.org/3/movie/popular", API_Options);
 
+    console.log("Response:", data);
+console.log("Status:", data.status);
+
       // console.log("Response:", data);
 
     const json = await data.json();

@@ -11,7 +11,7 @@ const MovieList = (props) => {
       <div className="flex overflow-x-scroll scrollbar-none">
         {moviesData.map((movie) => (
           <div className="flex-shrink-0 cursor-pointer">
-            <MovieCard key={movie.id} Poster_Img={movie.poster_path} />
+            <MovieCard key={movie.id} movie={movie} />
           </div>
         ))}
       </div>
