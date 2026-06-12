@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
+import MoviesPage from "./MoviesPage";
 
 const Body = () => {
 
@@ -21,13 +22,11 @@ const Body = () => {
       path: "/browse",
       element: <Browse />,
     },
+    {
+      path: "/movies/:category",
+      element: <MoviesPage />,
+    },
   ]);
-
-  
-
-
-  
-
 
 
   return (
