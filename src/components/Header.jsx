@@ -16,7 +16,12 @@ const Header = () => {
   const user = useSelector((store) => store.user);
   const [showDropDown, setshowDropDown] = useState(false);
   const { category } = useParams();
+<<<<<<< HEAD
   const showGptSearch = useSelector((store) => store.gpt?.showGptSearch);
+=======
+   const showGptSearch = useSelector((store) => store.gpt?.showGptSearch);
+  
+>>>>>>> c76f764f3746b996806ddec71494d7d942a45603
 
   const location = useLocation();
 
@@ -52,7 +57,11 @@ const Header = () => {
 
   const handleGPTSearchClick = () => {
     dispatch(toggleGptSearchView());
+<<<<<<< HEAD
   };
+=======
+  }
+>>>>>>> c76f764f3746b996806ddec71494d7d942a45603
 
   return (
     <div className="absolute w-full flex items-center justify-between px-8 py-2 bg-gradient-to-b from-black z-10">
@@ -60,6 +69,7 @@ const Header = () => {
         <img src={logoImg} className="w-60" alt="logo"></img>
 
         {user && (
+<<<<<<< HEAD
           <div
             className="underline"
             onClick={() => {
@@ -72,6 +82,14 @@ const Header = () => {
               Home
             </Link>
 
+=======
+          <div className="underline">
+
+            <Link className="text-white pl-2.5" to={`/browse`}>
+              Home
+            </Link>
+            
+>>>>>>> c76f764f3746b996806ddec71494d7d942a45603
             <Link className="text-white pl-2.5" to={`/movies/nowPlayingMovies`}>
               Now Playing
             </Link>
@@ -91,6 +109,7 @@ const Header = () => {
         )}
       </div>
 
+<<<<<<< HEAD
       {user && (
         <div className="flex">
           <Link
@@ -101,10 +120,22 @@ const Header = () => {
             {showGptSearch ? "" : "GPT Search"}
           </Link>
 
+=======
+
+      {user && (
+        <div className="flex">
+
+          <button className="text-white pr-5 cursor-pointer" onClick={handleGPTSearchClick}>{showGptSearch ? "Main Page" : "GPT Search"}</button>
+          
+>>>>>>> c76f764f3746b996806ddec71494d7d942a45603
           <div
             className="relative flex items-center cursor-pointer"
             onClick={() => setshowDropDown(!showDropDown)}
           >
+<<<<<<< HEAD
+=======
+
+>>>>>>> c76f764f3746b996806ddec71494d7d942a45603
             <img src={userIcon} className="w-10 h-10" alt="user" />
             <p className="text-2xl">{showDropDown ? "🔺" : "🔻"}</p>
 
