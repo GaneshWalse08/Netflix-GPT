@@ -9,10 +9,7 @@ import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import MoviesPage from "./MoviesPage";
 import Search from "./GptSearch";
-<<<<<<< HEAD
 import GPTSearch from "./GptSearch";
-=======
->>>>>>> c76f764f3746b996806ddec71494d7d942a45603
 
 const Body = () => {
 
@@ -31,13 +28,11 @@ const Body = () => {
       path: "/movies/:category",
       element: <MoviesPage />,
     },
-<<<<<<< HEAD
     {
       path: "/gptSearch",
       element: <GPTSearch />,
     },
-=======
->>>>>>> c76f764f3746b996806ddec71494d7d942a45603
+
     
   ]);
 
