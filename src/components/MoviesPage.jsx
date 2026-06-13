@@ -4,15 +4,15 @@ import MovieCard from "./MovieCard";
 import { useEffect, useState } from "react";
 import Header from "./Header";
 import { API_Options } from "../utils/constants";
+import TrailerPopup from "./TrailerPopup";
 
 const MoviesPage = () => {
+  const [selectedMovie, setSelectedMovie] = useState(null);
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const { category } = useParams();
-  // const movieStore = useSelector((store) => store.movies);
 
-  // const movies = movieStore[category];
 
   const fetchMovies = async () => {
     if (loading) return;
@@ -89,9 +89,18 @@ const MoviesPage = () => {
 
       <div className="flex flex-wrap justify-center">
         {movies?.map((movie) => (
-          <MovieCard key={movie.id} movie={movie} />
+          <div onClick={() => setSelectedMovie(movie)}>
+            <MovieCard key={movie.id} movie={movie} />
+          </div>
         ))}
       </div>
+
+      {selectedMovie && (
+        <TrailerPopup
+          movie={selectedMovie}
+          onClose={() => setSelectedMovie(null)}
+        />
+      )}
     </div>
   );
 };
