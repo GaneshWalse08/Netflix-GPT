@@ -1,10 +1,20 @@
-import { defineConfig } from 'vite'
-import tailwindcss from '@tailwindcss/vite'
-import react from '@vitejs/plugin-react' // <-- Add this import
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  plugins: [
-    react(), // <-- You must include the react plugin
-    tailwindcss(),
-  ],
-})
+  plugins: [react(), tailwindcss()],
+  server: {
+    host: "localhost",
+    port: 5173,
+    strictPort: true,
+    hmr: {
+      host: "localhost",
+      protocol: "ws",
+    },
+    watch: {
+      usePolling: true,
+      interval: 100,
+    },
+  },
+});

@@ -9,6 +9,7 @@ import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import MoviesPage from "./MoviesPage";
 import Search from "./GptSearch";
+import GPTSearch from "./GptSearch";
 
 const Body = () => {
 
@@ -26,6 +27,10 @@ const Body = () => {
     {
       path: "/movies/:category",
       element: <MoviesPage />,
+    },
+    {
+      path: "/gptSearch",
+      element: <GPTSearch />,
     },
     
   ]);

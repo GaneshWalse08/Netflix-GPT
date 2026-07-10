@@ -16,8 +16,7 @@ const Header = () => {
   const user = useSelector((store) => store.user);
   const [showDropDown, setshowDropDown] = useState(false);
   const { category } = useParams();
-   const showGptSearch = useSelector((store) => store.gpt?.showGptSearch);
-  
+  const showGptSearch = useSelector((store) => store.gpt?.showGptSearch);
 
   const location = useLocation();
 
@@ -53,7 +52,7 @@ const Header = () => {
 
   const handleGPTSearchClick = () => {
     dispatch(toggleGptSearchView());
-  }
+  };
 
   return (
     <div className="absolute w-full flex items-center justify-between px-8 py-2 bg-gradient-to-b from-black z-10">
@@ -62,11 +61,18 @@ const Header = () => {
 
         {user && (
           <div className="underline">
-
-            <Link className="text-white pl-2.5" to={`/browse`}>
+            <Link
+              className="text-white pl-2.5"
+              to={`/browse`}
+              onClick={() => {
+                if (showGptSearch) {
+                  dispatch(toggleGptSearchView());
+                }
+              }}
+            >
               Home
             </Link>
-            
+
             <Link className="text-white pl-2.5" to={`/movies/nowPlayingMovies`}>
               Now Playing
             </Link>
@@ -86,17 +92,20 @@ const Header = () => {
         )}
       </div>
 
-
       {user && (
         <div className="flex">
+          <Link
+            to={"/gptSearch"}
+            className="text-white pr-5 pt-2"
+            onClick={handleGPTSearchClick}
+          >
+            {showGptSearch ? "" : "GPT Search"}
+          </Link>
 
-          <button className="text-white pr-5 cursor-pointer" onClick={handleGPTSearchClick}>{showGptSearch ? "Main Page" : "GPT Search"}</button>
-          
           <div
             className="relative flex items-center cursor-pointer"
             onClick={() => setshowDropDown(!showDropDown)}
           >
-
             <img src={userIcon} className="w-10 h-10" alt="user" />
             <p className="text-2xl">{showDropDown ? "🔺" : "🔻"}</p>
 
